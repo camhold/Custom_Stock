@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- Heredamos la vista existente del formulario stock.picking -->
+        <record id="view_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <!-- Agregamos un grupo para los campos del Plan Analítico y Cuenta Analítica -->
+                    <group string="Plan Analítico y Cuenta Analítica">
+                        <field name="analytic_plan_id" placeholder="Seleccionar Plan Analítico" options="{'no_create': True}" />
+                        <field name="analytic_account_id" placeholder="Seleccionar Cuenta Analítica" options="{'no_create': True}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
