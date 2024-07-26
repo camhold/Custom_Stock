@@ -9,8 +9,7 @@
                 <xpath expr="//sheet" position="inside">
                     <!-- Agregamos un grupo para los campos del Plan Analítico y Cuenta Analítica -->
                     <group string="Plan Analítico y Cuenta Analítica">
-                        <field name="analytic_plan_id" placeholder="Seleccionar Plan Analítico" options="{'no_create': True}" />
-                        <field name="analytic_account_id" placeholder="Seleccionar Cuenta Analítica" options="{'no_create': True}" />
+                        <field name="analytic_distribution" widget="analytic_distribution" optional="show" options="{'account_field': 'account_id'}" business_domain_compute="parent.move_type in ['out_invoice', 'out_refund', 'out_receipt'] and 'invoice' or parent.move_type in ['in_invoice', 'in_refund', 'in_receipt'] and 'bill' or 'general'"/>
                     </group>
                 </xpath>
             </field>
