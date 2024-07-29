@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 class StockPicking(models.Model):
-    _inherit = 'stock.picking'
+    _inherit = 'stock.move'
 
     # Agrega el campo para el Plan Analítico
     analytic_plan_id = fields.Many2one('account.analytic.plan', string="Plan Analítico")
